@@ -8,16 +8,18 @@
 </head>
 <body>
    <header>
-      <div id="topo">
-         <div>
+      <div id="caixa">
+         <div class="logo">
             <img src="../img/logo.png"/>
          </div>
-         <nav>
-            <ul>
-               <li>Registrar-se</li>
-               <li>Entrar</li>
-            </ul>
-         </nav>
+         <div>
+            <nav class="menu">
+               <ul class="menu-lista">
+                  <li>Registrar-se</li>
+                  <li>Entrar</li>
+               </ul>
+            </nav>
+         </div>
       </div>
    </header>
 </body>

@@ -1,5 +1,31 @@
-#topo {
+* {
+   padding: 0;
+   margin: 0;
+}
+
+header {
    display: flex;
-   flex-direction: row;
-   justify-content: space-between;
+
+   #caixa {
+      display: flex;
+      justify-content: end;
+
+      .menu {
+      justify-content: end;
+
+         .menu-lista {
+            display: flex;
+            flex-direction: row;
+         }
+      }
+
+      .logo {
+         display: flex;
+         flex-direction: row;
+      }
+   }
+}
+
+ul {
+   list-style-type: none;
 }
