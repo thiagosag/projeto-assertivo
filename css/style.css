@@ -1,0 +1,23 @@
+* {
+   padding: 0;
+   margin: 0;
+}
+
+ul {
+   list-style-type: none;
+}
+
+.caixa {
+   display: flex;
+   justify-content: space-between;
+}
+
+.menu-lista {
+   display: flex;
+   flex-direction: row;
+}
+
+.logo {
+   display: flex;
+   flex-direction: row;
+}
