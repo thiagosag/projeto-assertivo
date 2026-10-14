@@ -8,7 +8,7 @@
 </head>
 <body>
    <header>
-      <div id="caixa">
+      <div class="caixa">
          <div class="logo">
             <img src="../img/logo.png"/>
          </div>

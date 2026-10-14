@@ -3,29 +3,21 @@
    margin: 0;
 }
 
-header {
-   display: flex;
-
-   #caixa {
-      display: flex;
-      justify-content: end;
-
-      .menu {
-      justify-content: end;
-
-         .menu-lista {
-            display: flex;
-            flex-direction: row;
-         }
-      }
-
-      .logo {
-         display: flex;
-         flex-direction: row;
-      }
-   }
-}
-
 ul {
    list-style-type: none;
+}
+
+.caixa {
+   display: flex;
+   justify-content: space-between;
+}
+
+.menu-lista {
+   display: flex;
+   flex-direction: row;
+}
+
+.logo {
+   display: flex;
+   flex-direction: row;
 }
