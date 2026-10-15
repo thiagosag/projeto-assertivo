@@ -34,8 +34,13 @@
             <h2>Registre-se e acerte!</h2>
             <p>Cadastre-se de forma 100% gratuita.</p>
 
-            <label for="nome">Nome</label>
-            <input id="nome" type=text placeholder="Digite seu nome"/>
+            <br><label for="nome">Nome completo:</label><br>
+            <input id="nome" type=text placeholder="Digite seu nome" required/>
+            <br><label for="nome">Email</label><br>
+            <input id="email" type=email placeholder="Seu melhor email" required/>
+            <br><label for="nome">Senha</label><br>
+            <input id="senha" type=password placeholder="Defina uma senha" required/>
+            <button type="submit">Cadastrar-se</button>
          </form>
       </div>
    </div>
