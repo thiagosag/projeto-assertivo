@@ -16,8 +16,9 @@
       $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
       $confirmaSenha = $_POST['confirmaSenha'];
       $token = bin2hex(random_bytes(32));
-      $tokenVerificado = FALSE;
+      $tokenVerificado = 0;
       $expira = date('Y-m-d H:i:s', strtotime('+1 hour'));
+      $dataCriado = date('Y-m-d H:i:s');
       
       // Validador de senhas idênticas.
       if(!($senha === $confirmaSenha)){
@@ -40,8 +41,8 @@
 
       // Inserção no banco de dados.
       $sql = "INSERT INTO usuario 
-      (nome, apelido, email, senha, token, expira, tokenVerificado) 
-      VALUES (?, ?, ?, ?, ?, ?, ?,)";
+      (nome, apelido, email, senha, token, expira, tokenVerificado, dataCriado) 
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
       $stmt = $pdo->prepare($sql);
       $stmt->execute(
@@ -52,7 +53,8 @@
             $senhaHash,
             $token,
             $expira,
-            $tokenVerificado
+            $tokenVerificado,
+            $dataCriado
          ]
       );
    }
