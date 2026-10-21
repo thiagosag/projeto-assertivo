@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use League\OAuth2\Client\Provider\Google;
 
-function enviaEmail($email, $nome)
+function enviaEmail($emailEnv, $nomeEnv)
 {
    $mail = new PHPMailer(true);
    try {
@@ -24,7 +24,7 @@ function enviaEmail($email, $nome)
 
       // Recipients
       $mail->setFrom('thiagosesabene@gmail.com', 'Assertivo');
-      $mail->addAddress($email, $nome);     
+      $mail->addAddress($emailEnv, $nomeEnv);     
 
       //Content
       $mail->isHTML(true);                                  //Set email format to HTML

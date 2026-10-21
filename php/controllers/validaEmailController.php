@@ -5,4 +5,5 @@ if($_SERVER['REQUEST_METHOD'] === 'GET')
 
 }
 
-// receber dados via GET aqui...
+// receber dados via GET aqui..
+// preciso atribuir "tokenVerificado" = 1

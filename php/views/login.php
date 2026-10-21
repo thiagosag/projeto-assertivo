@@ -1,5 +1,7 @@
 <?php
-   require __DIR__ . "/../controllers/cadastroController.php";
+   require __DIR__ . "/../controllers/loginController.php";
+   var_dump($_SESSION);
+   print($login);
 ?>
 
 <!DOCTYPE html>
@@ -38,12 +40,12 @@
             <p>Tenha acesso à plataforma!</p>
 
             <br><label for="email">Email</label><br>
-            <input name="email" id="email" type=email placeholder="Seu email cadastrado" required/>
+            <input name="emailLogin" id="email" type=email placeholder="Seu email cadastrado" required/>
             
             <br><label for="senha">Senha</label><br>
-            <input name="senha" id="senha" type=password placeholder="Sua senha" required/>
+            <input name="senhaLogin" id="senha" type=password placeholder="Sua senha" required/>
             
-            <button name="botaoRegistro" type="submit">Login</button>
+            <button name="botaoLogin" type="submit">Login</button>
          </form>
       </div>
    </div>

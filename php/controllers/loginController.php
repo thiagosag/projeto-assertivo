@@ -11,24 +11,25 @@ if($_SESSION['logado'] === TRUE)
 }
 
 // Valida usuário no banco de dados; atribui TRUE a 'logado' se o mesmo existir.
-if($_SERVER['REQUEST_METHOD'] === 'POST')
+if(isset($_POST['botaoLogin']))
 {
-   $email = $_POST['email'];
-   $senha = $_POST['senha'];
+   $emailLogin = $_POST['emailLogin'];
+   $senhaLogin = $_POST['senhaLogin'];
 
-   $sql = "*SELECT  FROM usuario WHERE tokenVerificado = 1 
+   $sql = "SELECT * FROM usuario WHERE tokenVerificado = 1 
    AND email = ? AND senha = ?";
-   $stmt = $pdo->prepare[$sql];
+   $stmt = $pdo->prepare($sql);
    $stmt->execute([
-      $email,
-      $senha
+      $emailLogin,
+      $senhaLogin
    ]);
 
    $login = $stmt->fetch();
 
+
    if($login)
    {
       $_SESSION['logado'] = TRUE;
-      header('Location: /../views/index.php'); 
+      header('Location: /../views/gestao.php'); 
    }
 }

@@ -4,7 +4,7 @@
    ini_set('display_errors', 1);
    ini_set('display_startup_errors', 1);
    error_reporting(E_ALL);
-
+   
    require_once __DIR__ . "/../models/conexao.php";
     
    // Dados recebidos no caminho: "views/cadastro.php".
@@ -57,4 +57,8 @@
             $dataCriado
          ]
       );
+
+      // Direcionamento para view de validação de email.
+      header('Location: /../views/validaEmail.php');
+      exit;
    }
