@@ -1,11 +1,12 @@
 <?php
+   require_once __DIR__ . "/../models/conexao.php";
+
    session_start();
 
    ini_set('display_errors', 1);
    ini_set('display_startup_errors', 1);
    error_reporting(E_ALL);
    
-   require_once __DIR__ . "/../models/conexao.php";
     
    // Dados recebidos no caminho: "views/cadastro.php".
    if(isset($_POST['botaoRegistro'])){
@@ -35,8 +36,12 @@
       if($checkEmail)
       {
          $_SESSION['status'] = 'Email ID alredy exists.';
-         header('Location: /../views/cadastro.php');
+         header('Location: cadastro.php');
          exit;
+      }else {
+         $_SESSION['nome'] = $nome;
+         $_SESSION['email'] = $email;
+         $_SESSION['token'] = $token;
       }
 
       // Inserção no banco de dados.
@@ -59,6 +64,6 @@
       );
 
       // Direcionamento para view de validação de email.
-      header('Location: /../views/validaEmail.php');
+      header('Location: enviaEmail.php');
       exit;
    }

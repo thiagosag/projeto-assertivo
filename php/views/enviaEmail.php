@@ -1,11 +1,14 @@
 <?php
-   require __DIR__ . "/../controllers/validaEmailController.php";
-   require __DIR__ . "/../controllers/cadastroController.php"
+   require __DIR__ . "/../controllers/enviaEmailController.php";
+
+   ini_set('display_errors', 1);
+   ini_set('display_startup_errors', 1);
+   error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-   <meta charset="UTF-8">
+   <meta charset="UTF-8">;
    <meta name="viewport" content="width=device-width">
    <link href="../../css/style.css" rel="stylesheet"/>
 
@@ -30,7 +33,7 @@
    <section>
       <div>
          <h2>Receba um link de ativação</h2>
-         <p>Ative sua conta agora agora mesmo clicando <a href="" onclick="enviaEmail($email $nome)">aqui</a></p>
+         <p>Ative sua conta agora agora mesmo clicando <a href="" onclick="enviaEmail($_SESSION['nome'] $_SESSION['email'] $_SESSION['token'])">aqui</a></p>
       </div>
    </section>
 </body>

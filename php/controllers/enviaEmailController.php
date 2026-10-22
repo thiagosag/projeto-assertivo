@@ -1,14 +1,19 @@
 <?php
-require 'path/to/PHPMailer/src/Exception.php';
-require 'path/to/PHPMailer/src/PHPMailer.php';
-require 'path/to/PHPMailer/src/SMTP.php';
-require '../../vendor/autoload.php';
+session_start();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ . '/../../vendor/phpmailer/phpmailer/src/Exception.php';
+require __DIR__ . '/../../vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require __DIR__ . '/../../vendor/phpmailer/phpmailer/src/SMTP.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use League\OAuth2\Client\Provider\Google;
 
-function enviaEmail($emailEnv, $nomeEnv)
+function enviaEmail($nomeEnv, $emailEnv, $tokenEnv)
 {
    $mail = new PHPMailer(true);
    try {
@@ -30,8 +35,8 @@ function enviaEmail($emailEnv, $nomeEnv)
       $mail->isHTML(true);                                  //Set email format to HTML
       $mail->Subject = 'Verifique seu email';
       $mail->Body    = "Aqui está o seu código de <b>verificação!</b>
-                        <br> <a href='/../views/validaEmail?$token'";
-      $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+                        <br> <a href='/../views/validaEmail?$tokenEnv";
+      #$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
       $mail->send();
       echo 'Message has been sent';
