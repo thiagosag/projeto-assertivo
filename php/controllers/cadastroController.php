@@ -63,6 +63,12 @@
          ]
       );
 
+      // Recuperação de ID para inserção na sessão do usuário.
+      $sql = "SELECT id FROM usuarios WHERE email = ?";
+      $stmt = $pdo->prepare([$sql]);
+      $stmt->execute([$email]);
+      $_SESSION['idUsuario'] = $stmt->fetch();
+
       // Direcionamento para view de validação de email.
       header('Location: enviaEmail.php');
       exit;
