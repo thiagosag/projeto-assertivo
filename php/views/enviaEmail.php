@@ -33,7 +33,7 @@
    <section>
       <div>
          <h2>Receba um link de ativação</h2>
-         <p>Ative sua conta agora agora mesmo clicando <a href="#" onclick="enviaEmail$_SESSION['email'], $_SESSION['token']; return flase;)">aqui</a></p>
+         <p>Ative sua conta agora agora mesmo clicando <a href="#" onclick="enviaEmail($_SESSION['email'], $_SESSION['token']; return flase;)">aqui</a></p>
       </div>
    </section>
 </body>
