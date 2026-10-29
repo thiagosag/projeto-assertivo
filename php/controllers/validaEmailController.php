@@ -22,5 +22,5 @@ if(!$token){
    
    echo "<h3>Email verificado com sucesso.</h3>";
    echo "<p>Faça login normalmente.</p>";
-   echo "<p><a href='login.php'>Ir para login</a></p>";
+   echo "<p><a href='/../views/login.php'>Ir para login</a></p>";
 }
