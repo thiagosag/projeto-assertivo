@@ -31,5 +31,8 @@ if(isset($_POST['botaoLogin']))
    {
       $_SESSION['logado'] = TRUE;
       header('Location: /../views/gestao.php'); 
+   } else {
+      $_SESSION['logado'] = FALSE;
+      echo "Erro ao iniciar sessão.";
    }
 }
