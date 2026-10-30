@@ -9,7 +9,7 @@ if($_SESSION['logado'] === NULL)
    $expira = date('Y-m-d H:i:s', strtotime('+1 hour'));
 
    $sql = "UPDATE token WHERE id = ? AND email = ? AND senha = ?
-         SET token = ? AND expira = ?";
+           SET token = ? AND expira = ?";
    $stmt = $pdo->prepare($sql);
    $stmt->execute([
       $_SESSION['idUsuario'],
@@ -18,5 +18,7 @@ if($_SESSION['logado'] === NULL)
       $token,
       $expira
    ]);
+   echo 'novo token gerado';
+   header('Location: /../views/EnviaEmail.php');
 }
 

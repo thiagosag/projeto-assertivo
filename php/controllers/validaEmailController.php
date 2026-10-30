@@ -7,6 +7,8 @@ error_reporting(E_ALL);
    
 require_once __DIR__ . '/../models/conexao.php';
 
+
+
 // Validação de token e redirecionamento para login.
 $token = $_GET['token'] ?? NULL;
 if(!$token){
@@ -19,9 +21,9 @@ if(!$token){
    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
    // Atualiza status de tokenVerificado para verdadeiro.
-   $sql = "UPDATE usuario SET tokenVerificado = 1 WHERE id = ?";
+   $sql = "UPDATE usuario SET tokenVerificado = 1 WHERE email = ?";
    $stmt = $pdo->prepare($sql);
-   $stmt->execute([$_SESSION['idUsuario']]);
+   $stmt->execute([$_SESSION['email']]);
    print_r($user);
    
    echo "<h3>Email verificado com sucesso.</h3>";

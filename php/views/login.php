@@ -1,6 +1,6 @@
 <?php
    require __DIR__ . "/../controllers/loginController.php";
-   var_dump($_SESSION);
+   var_dump($_SESSION['logado']);
    print($login);
 ?>
 

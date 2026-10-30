@@ -27,6 +27,8 @@ if(isset($_POST['botaoLogin']))
    ]);
 
    $login = $stmt->fetch();
+   echo "$login";
+   echo "login recebeu algo<br>";
 
    if($login)
    {
