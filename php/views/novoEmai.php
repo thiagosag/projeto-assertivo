@@ -1,5 +1,5 @@
 <?php
-   require __DIR__ . "/../models/conexao.php";
+   
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

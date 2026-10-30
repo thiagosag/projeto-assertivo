@@ -10,6 +10,8 @@ if($_SESSION['logado'] === TRUE)
    header('Location: /../views/index.php');
 }
 
+$_SESSION['logado'] = FALSE;
+
 // Valida usuário no banco de dados; atribui TRUE a 'logado' se o mesmo existir.
 if(isset($_POST['botaoLogin']))
 {
@@ -32,8 +34,6 @@ if(isset($_POST['botaoLogin']))
       header('Location: /../views/gestao.php'); 
    }else {
       // Verifica se usuário existe mas sem email verificado.
-      $_SESSION['logado'] = FALSE;
-
       $sql = "SELECT * FROM usuario WHERE tokenVerificado = 0
       AND email = ? AND senha = ?";
       $stmt = $pdo->prepare($sql);
@@ -46,9 +46,11 @@ if(isset($_POST['botaoLogin']))
       
       if($loginSemToken)
       {  
+         recuperaId($email);
+         $_SESSION['logado'] = NULL;
          $_SESSION['email'] = $emailLogin;
          $_SESSION['senha'] = $senhaLogin;
-         header('Location: novoEmailController');
+         header('Location: /../views/novoEmail.php');
       }
    }
 }
