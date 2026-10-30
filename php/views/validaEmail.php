@@ -1,5 +1,5 @@
 <?php
-   include __DIR__ . "/../controllers/validaEmailController.php";
+   require __DIR__ . "/../controllers/validaEmailController.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

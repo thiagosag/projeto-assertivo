@@ -26,13 +26,29 @@ if(isset($_POST['botaoLogin']))
 
    $login = $stmt->fetch();
 
-
    if($login)
    {
       $_SESSION['logado'] = TRUE;
       header('Location: /../views/gestao.php'); 
    }else {
+      // Verifica se usuário existe mas sem email verificado.
       $_SESSION['logado'] = FALSE;
-      echo "Erro ao iniciar sessão.";
+
+      $sql = "SELECT * FROM usuario WHERE tokenVerificado = 0
+      AND email = ? AND senha = ?";
+      $stmt = $pdo->prepare($sql);
+      $stmt->execute([
+         $emailLogin,
+         $senhaLogin
+      ]);
+
+      $loginSemToken = $stmt->fetch();
+      
+      if($loginSemToken)
+      {  
+         $_SESSION['email'] = $emailLogin;
+         $_SESSION['senha'] = $senhaLogin;
+         header('Location: novoEmailController');
+      }
    }
 }
