@@ -1,7 +1,7 @@
 <?php
    require __DIR__ . "/../controllers/loginController.php";
-   var_dump($_SESSION['logado']);
-   print($login);
+   /* var_dump($_SESSION['logado']);
+   print($login); */
 ?>
 
 <!DOCTYPE html>

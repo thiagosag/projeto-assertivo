@@ -11,6 +11,7 @@ if($_SESSION['logado'] === TRUE)
 }
 
 $_SESSION['logado'] = FALSE;
+var_dump($_POST);
 
 // Valida usuário no banco de dados; atribui TRUE a 'logado' se o mesmo existir.
 if(isset($_POST['botaoLogin']))
@@ -27,7 +28,7 @@ if(isset($_POST['botaoLogin']))
    ]);
 
    $login = $stmt->fetch();
-   echo "$login";
+   var_dump($login);
    echo "login recebeu algo<br>";
 
    if($login)
