@@ -1,24 +1,30 @@
 <?php
 
-require __DIR__ . "/../models/conexao.php";
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-// Atualiza token do usuário.
-if($_SESSION['logado'] === NULL)
+require __DIR__ . "/../controllers/loginController.php";
+require __DIR__ . "/../controllers/enviaEmailController.php";
+
+// Atualiza token no banco de dados e data de expiração.
+function novoEmail()
 {
+   require __DIR__ . "/../models/conexao.php";
    $token = bin2hex(random_bytes(32));
    $expira = date('Y-m-d H:i:s', strtotime('+1 hour'));
 
-   $sql = "UPDATE token WHERE id = ? AND email = ? AND senha = ?
-           SET token = ? AND expira = ?";
+   $sql = "UPDATE usuario SET token = ?, expira = ? WHERE id = ? AND email = ?";
    $stmt = $pdo->prepare($sql);
    $stmt->execute([
-      $_SESSION['idUsuario'],
+      $_SESSION['id'],
       $_SESSION['email'],
-      $_SESSION['senha'],
       $token,
       $expira
    ]);
-   echo 'novo token gerado';
-   header('Location: /../views/EnviaEmail.php');
+
+   enviaEmail($_SESSION['email'], $token);
 }
+
+
 

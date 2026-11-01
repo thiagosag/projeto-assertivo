@@ -1,6 +1,5 @@
 <?php
    require __DIR__ . "/../controllers/enviaEmailController.php";
-   print_r($_SESSION);
 
    ini_set('display_errors', 1);
    ini_set('display_startup_errors', 1);
@@ -33,8 +32,8 @@
    </header>
    <section>
       <div>
-         <h2>Receba um link de ativação</h2>
-         <p>Ative sua conta agora agora mesmo clicando <a href="#" onclick="<?php enviaEmail($_SESSION['email'], $_SESSION['token']); ?>">aqui</a></p>
+         <h2>Verifique seu email!</h2>
+         <p>Você acabou de receber um link de ativação da sua conta via email, basta clicar nele.</a></p>
       </div>
    </section>
 </body>

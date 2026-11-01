@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../models/conexao.php";
-
+require __DIR__. "/../models/recuperaID.php";
 session_start();
 
 ini_set('display_errors', 1);
@@ -63,8 +63,8 @@ if(isset($_POST['botaoRegistro'])){
       ]
    );
 
-   // Função recupera ID recebe email e executa um query. 
-   recuperaID($email);
+  /*  // Função recupera ID recebe email e executa um query. 
+   recuperaID($email); */
 
    // Direcionamento para view de validação de email.
    header('Location: enviaEmail.php');
