@@ -23,6 +23,7 @@ if(isset($_POST['botaoLogin']))
    
    if($usuario['email'] == $emailLogin && password_verify($senhaLogin, $usuario['senha']))
    {  
+      var_dump($usuario);
       if($usuario['tokenVerificado'] === 1){
          $_SESSION['logado'] = TRUE;
          $_SESSION['email'] = $usuario['email'];
@@ -32,8 +33,8 @@ if(isset($_POST['botaoLogin']))
          exit; */
       } else {
          
-         header('Location: ../views/novoEmail.php');
-         exit;
+         /* header('Location: ../views/novoEmail.php');
+         exit; */
       }
    }
 }
