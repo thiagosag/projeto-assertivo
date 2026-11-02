@@ -10,8 +10,10 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width">
-   <link href="../../css/style.css" rel="stylesheet"/>
 
+   <!-- Recursos de CSS -->
+   <link href="../../css/style.css" rel="stylesheet"/>
+   <link href="../../../css/gestao.css" rel="stylesheet"/>
 </head>
 <body>
    <header>
@@ -32,8 +34,14 @@
    </header>
    <section>
       <div>
-         <h2>Olá <?=$nome?></h2>
-         <p>Você acabou de receber um link de ativação da sua conta via email, basta clicar nele.</a></p>
+         <h2>Olá, <?= $_SESSION['nome'];?></h2>
+         <p> O que vamos fazer hoje?</p>
+      </div>
+      <div>
+         <div class="tarefa">
+            <h3>Novo documento</h3>
+            <p>Adicione um novo documento</p>
+         </div>
       </div>
    </section>
 </body>

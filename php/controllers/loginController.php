@@ -34,7 +34,7 @@ if(isset($_POST['botaoLogin']))
          $_SESSION['apelido'] = $usuario['apelido'];
 
          // Direciona à view de gestão após atribuição de dados à sessão do usuário.
-         header('Location: ../views/gestao.php');
+         header('Location: ../views/atividades/gestao.php');
          exit;
       } else {
          // Se email não validado, então redirecionamento.
