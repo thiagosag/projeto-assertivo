@@ -7,8 +7,6 @@ error_reporting(E_ALL);
    
 require_once __DIR__ . '/../models/conexao.php';
 
-
-
 // Validação de token e redirecionamento para login.
 $token = $_GET['token'] ?? NULL;
 if(!$token){

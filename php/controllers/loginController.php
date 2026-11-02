@@ -25,16 +25,23 @@ if(isset($_POST['botaoLogin']))
    {  
       var_dump($usuario);
       if($usuario['tokenVerificado'] === 1){
+         // Atribui dados à sessão do usuário.
          $_SESSION['logado'] = TRUE;
          $_SESSION['email'] = $usuario['email'];
          $_SESSION['id'] = $usuario['id'];
-         echo "Usuario LOGADO com sucesso!";
-         /* header('Location: /../views/gestao.php');
-         exit; */
+         $_SESSION['nome'] = $usuario['nome'];
+         $_SESSION['dataNascimento'] = $usuario['dataNascimento'];
+         $_SESSION['apelido'] = $usuario['apelido'];
+
+         // Direciona à view de gestão após atribuição de dados à sessão do usuário.
+         header('Location: ../views/gestao.php');
+         exit;
       } else {
-         
-         /* header('Location: ../views/novoEmail.php');
-         exit; */
+         // Se email não validado, então redirecionamento.
+         header('Location: ../views/novoEmail.php');
+         exit;
       }
+   }else {
+      echo "Informações não coincidem.";
    }
 }
