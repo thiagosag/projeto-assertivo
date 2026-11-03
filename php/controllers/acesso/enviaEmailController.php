@@ -1,15 +1,7 @@
 <?php
 session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require __DIR__ . '/../../../vendor/phpmailer/phpmailer/src/Exception.php';
-require __DIR__ . '/../../../vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require __DIR__ . '/../../../vendor/phpmailer/phpmailer/src/SMTP.php';
-
-require __DIR__ . '/../../../vendor/autoload.php';
+require_once __DIR__ . '/../../../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -26,7 +18,7 @@ function enviaEmail($emailEnv, $tokenEnv)
       $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
       $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
       $mail->Username   = 'thiagosesabene@gmail.com';             //SMTP username
-      $mail->Password   = 'vyan jzvn jhtx vtjt';                  //SMTP password
+      $mail->Password   = 'vhuu sbdx behq oxzv';                  //SMTP password
       $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
       $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -35,14 +27,13 @@ function enviaEmail($emailEnv, $tokenEnv)
       $mail->addAddress($emailEnv);     
 
       //Content
-      $mail->isHTML(true);                                        //Set email format to HTML
+      $mail->isHTML(true);                                        
       $mail->Subject = 'Verifique seu email';
       $mail->Body    = "Aqui está o seu código de <b>verificação!</b>
       <br> <a href='http://localhost/2%20Semestre/Assertivo/Projeto/php/views/validaEmail.php?token=$tokenEnv> Verificar Conta </a>";
-      #$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
       $mail->send();
-      echo 'Message has been sent';
+      echo 'Mensagem enviada';
    } catch (Exception $e) {
       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
    }

@@ -1,2 +1,2 @@
 vendor/
-php/controllers/enviaEmailController.php
+php/controllers/acesso/enviaEmailController.php

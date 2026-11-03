@@ -1,13 +1,9 @@
 <?php
 session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once __DIR__ . '/../../models/conexao.php';
 
-// Valida usuário no banco de dados; atribui TRUE a '$_SESSION[logado]' se o mesmo existir.
+// Valida se usuário existe no banco de dados.
 if(isset($_POST['botaoLogin']))
 {
    $emailLogin = $_POST['emailLogin'];
@@ -23,7 +19,6 @@ if(isset($_POST['botaoLogin']))
    
    if($usuario['email'] == $emailLogin && password_verify($senhaLogin, $usuario['senha']))
    {  
-      var_dump($usuario);
       if($usuario['tokenVerificado'] === 1){
          // Atribui dados à sessão do usuário.
          $_SESSION['logado'] = TRUE;

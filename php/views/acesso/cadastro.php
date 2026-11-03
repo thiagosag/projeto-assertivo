@@ -1,5 +1,5 @@
 <?php
-   require __DIR__ . "/../../controllers/cadastroController.php";
+   require_once __DIR__ . "/../../controllers/acesso/cadastroController.php";
 ?>
 
 <!DOCTYPE html>

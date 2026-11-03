@@ -1,11 +1,7 @@
 <?php
+session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require __DIR__ . "/../../controllers/loginController.php";
-require __DIR__ . "/../../controllers/enviaEmailController.php";
+require_once __DIR__ . "/../../controllers/acesso/enviaEmailController.php";
 
 // Atualiza token no banco de dados e data de expiração.
 function novoEmail()

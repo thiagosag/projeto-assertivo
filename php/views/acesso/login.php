@@ -1,5 +1,5 @@
 <?php
-   require __DIR__ . "/../../controllers/loginController.php";
+   require_once __DIR__ . "/../../controllers/acesso/loginController.php";
 ?>
 
 <!DOCTYPE html>

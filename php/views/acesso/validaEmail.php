@@ -1,5 +1,5 @@
 <?php
-   require __DIR__ . "/../../controllers/validaEmailController.php";
+   require __DIR__ . "/../../acesso/controllers/validaEmailController.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -1,12 +1,7 @@
 <?php
-require_once __DIR__ . "/../../models/conexao.php";
-require __DIR__. "/../../models/recuperaID.php";
 session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
+require_once __DIR__ . "/../../models/conexao.php";
 
 // Dados recebidos no caminho: "views/cadastro.php".
 if(isset($_POST['botaoRegistro'])){
@@ -33,9 +28,10 @@ if(isset($_POST['botaoRegistro'])){
    $stmt->execute([$email]);
    $checkEmail = $stmt->fetch();
 
+   // Se email já existe no banco de dados.
    if($checkEmail)
    {
-      $_SESSION['status'] = 'Email ID alredy exists.';
+      $_SESSION['status'] = 'Email já existe.';
       header('Location: cadastro.php');
       exit;
    }else {
@@ -44,7 +40,7 @@ if(isset($_POST['botaoRegistro'])){
       $_SESSION['token'] = $token;
    }
 
-   // Inserção no banco de dados.
+   // Cadastro de usuário no banco de dados.
    $sql = "INSERT INTO usuario 
    (nome, apelido, email, senha, token, expira, tokenVerificado, dataCriado) 
    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -62,9 +58,6 @@ if(isset($_POST['botaoRegistro'])){
          $dataCriado
       ]
    );
-
-  /*  // Função recupera ID recebe email e executa um query. 
-   recuperaID($email); */
 
    // Direcionamento para view de validação de email.
    header('Location: enviaEmail.php');
