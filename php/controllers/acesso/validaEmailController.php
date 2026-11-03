@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
    
-require_once __DIR__ . '/../models/conexao.php';
+require_once __DIR__ . '/../../models/conexao.php';
 
 // Validação de token e redirecionamento para login.
 $token = $_GET['token'] ?? NULL;

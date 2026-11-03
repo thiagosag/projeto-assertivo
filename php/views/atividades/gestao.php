@@ -12,7 +12,7 @@
    <meta name="viewport" content="width=device-width">
 
    <!-- Recursos de CSS -->
-   <link href="../../css/style.css" rel="stylesheet"/>
+   <link href="../../../css/style.css" rel="stylesheet"/>
    <link href="../../../css/gestao.css" rel="stylesheet"/>
 </head>
 <body>

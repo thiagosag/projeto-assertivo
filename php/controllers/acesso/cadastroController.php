@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . "/../models/conexao.php";
-require __DIR__. "/../models/recuperaID.php";
+require_once __DIR__ . "/../../models/conexao.php";
+require __DIR__. "/../../models/recuperaID.php";
 session_start();
 
 ini_set('display_errors', 1);

@@ -1,5 +1,5 @@
 <?php
-   require __DIR__ . "/../controllers/cadastroController.php";
+   require __DIR__ . "/../../controllers/cadastroController.php";
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width">
-   <link href="../../css/style.css" rel="stylesheet"/>
+   <link href="../../../css/style.css" rel="stylesheet"/>
 
 </head>
 <body>

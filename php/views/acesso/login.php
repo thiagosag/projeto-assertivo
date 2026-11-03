@@ -1,7 +1,5 @@
 <?php
-   require __DIR__ . "/../controllers/loginController.php";
-   /* var_dump($_SESSION['logado']);
-   print($login); */
+   require __DIR__ . "/../../controllers/loginController.php";
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +7,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width">
-   <link href="../../css/style.css" rel="stylesheet"/>
+   <link href="../../../css/style.css" rel="stylesheet"/>
 </head>
 <body>
    <header>
