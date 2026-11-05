@@ -1,7 +1,7 @@
-# projeto-assertivo
+# Projeto Assertivo
 Um gerenciador de atividades.
 
-#Tecnologias
+# Tecnologias
 - PHP;
 - JavaScript;
 - CSS/Bootstrap
