@@ -1,5 +1,5 @@
 # Projeto Assertivo
-Um gerenciador de atividades desenvolvido em PHP.
+Um gerenciador de atividades desenvolvido em PHP, CSS e JavaScript.
 
 # Tecnologias
 - PHP;
